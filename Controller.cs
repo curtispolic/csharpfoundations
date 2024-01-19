@@ -23,6 +23,9 @@
 
             Console.WriteLine("\n\nBelow is the CalculateAndPrintStudentGradesBetter module:");
             CalculateAndPrintStudentGradesBetter.Run();
+
+            Console.WriteLine("\n\nBelow is the CalculateFinalGPA module:");
+            CalculateFinalGPA.Run();
         }
     }
 }

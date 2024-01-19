@@ -12,6 +12,8 @@
             Console.WriteLine("\n\nBelow is the LiteralAndVariableValues module:");
             LiteralAndVariableValues.Run();
 
+            Console.WriteLine("\n\nBelow is the FormatLiteralStrings module:");
+            FormatLiteralStrings.Run();
         }
     }
 }

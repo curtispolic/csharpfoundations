@@ -20,6 +20,9 @@
 
             Console.WriteLine("\n\nBelow is the CalculateAndPrintStudentGrades module:");
             CalculateAndPrintStudentGrades.Run();
+
+            Console.WriteLine("\n\nBelow is the CalculateAndPrintStudentGradesBetter module:");
+            CalculateAndPrintStudentGradesBetter.Run();
         }
     }
 }

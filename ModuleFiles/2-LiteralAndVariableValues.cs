@@ -44,7 +44,7 @@
             int messageTotal = 3;
             double temperatureCelsius = 34.4;
 
-            Console.WriteLine("\n Hello, " + challengeName + "! You have " +
+            Console.WriteLine("\nHello, " + challengeName + "! You have " +
                 messageTotal.ToString() + " messages in your inbox. The temperature is " +
                 temperatureCelsius.ToString() + "celsius");
         }

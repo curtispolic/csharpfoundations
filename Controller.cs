@@ -17,6 +17,9 @@
 
             Console.WriteLine("\n\nBelow is the BasicStringFormatting module:");
             BasicNumberOperations.Run();
+
+            Console.WriteLine("\n\nBelow is the CalculateAndPrintStudentGrades module:");
+            CalculateAndPrintStudentGrades.Run();
         }
     }
 }

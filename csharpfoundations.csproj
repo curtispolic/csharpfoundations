@@ -8,9 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ModuleFiles\" />
+    <None Remove="1-FirstCodeModules\" />
+    <None Remove="2-ConsoleApplicationsModules\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ModuleFiles\" />
+    <Folder Include="1-FirstCodeModules\" />
+    <Folder Include="2-ConsoleApplicationsModules\" />
   </ItemGroup>
 </Project>

@@ -26,6 +26,8 @@
 
             var message = "Message example";
 
+            firstName = message;
+
             // vars are typed by implication of the data entered
             // They must be assigned a value when they are initialised
 

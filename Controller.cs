@@ -41,6 +41,9 @@
                         Console.WriteLine("\n--------------------\n\nBelow is the output for the CallMethodsFromDotnetLibrary module:");
                         CallMethodsFromDotnetLibrary.Run();
 
+                        Console.WriteLine("\n--------------------\n\nBelow is the output for the DecisionLogic module:");
+                        DecisionLogic.Run();
+
                         break;
 
                     default:

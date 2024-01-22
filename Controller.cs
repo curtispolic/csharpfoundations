@@ -44,6 +44,9 @@
                         Console.WriteLine("\n--------------------\n\nBelow is the output for the DecisionLogic module:");
                         DecisionLogic.Run();
 
+                        Console.WriteLine("\n--------------------\n\nBelow is the output for the StoreAndIterateOverArrays module:");
+                        StoreAndIterateOverArrays.Run();
+
                         break;
 
                     default:

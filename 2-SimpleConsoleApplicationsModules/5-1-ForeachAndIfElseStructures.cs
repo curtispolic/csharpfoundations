@@ -23,6 +23,7 @@ namespace csharpfoundations
                 Extra credit assignments are worth 10% of an exam score (when calculating the final numeric grade).
                 Add extra credit assignment scores to the student's total exam score before calculating the final numeric grade.
                 Your application needs to automatically assign letter grades based on the calculated final score for each student.
+            Extra credit will be implemented in the next module
 
             Your application needs to output/display each student’s name and formatted grade.
 
@@ -62,9 +63,6 @@ namespace csharpfoundations
             Console.WriteLine($"Student{maxTabsString}Grade\n");
 
             foreach(ProjectStudent student in studentList) {student.Print(maxTabs);}
-
-            Console.WriteLine("Press the Enter key to continue");
-            Console.ReadLine();
         }
     }
 

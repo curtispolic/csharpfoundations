@@ -50,6 +50,9 @@
                         Console.WriteLine("\n--------------------\n\nBelow is the output for the ForeachAndIfElseStructures module:");
                         ForeachAndIfElseStructures.Run();
 
+                        Console.WriteLine("\n--------------------\n\nBelow is the output for the FurtherForeachAndIfElseStructures module:");
+                        FurtherForeachAndIfElseStructures.Run();
+
                         break;
 
                     default:

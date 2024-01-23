@@ -47,6 +47,9 @@
                         Console.WriteLine("\n--------------------\n\nBelow is the output for the StoreAndIterateOverArrays module:");
                         StoreAndIterateOverArrays.Run();
 
+                        Console.WriteLine("\n--------------------\n\nBelow is the output for the ForeachAndIfElseStructures module:");
+                        ForeachAndIfElseStructures.Run();
+
                         break;
 
                     default:

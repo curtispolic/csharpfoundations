@@ -65,6 +65,9 @@ public class Controller
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-2 ControlVariableScope module:");
                     ControlVariableScope.Run();
 
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-3 SwitchCaseConstructs module:");
+                    SwitchCaseConstructs.Run();
+
                     break;
 
                 case "1-1":
@@ -148,6 +151,12 @@ public class Controller
                 case "3-2":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-2 ControlVariableScope module:");
                     ControlVariableScope.Run();
+
+                    break;
+
+                case "3-3":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-3 SwitchCaseConstructs module:");
+                    SwitchCaseConstructs.Run();
 
                     break;
 

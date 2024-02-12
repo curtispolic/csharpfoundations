@@ -62,6 +62,9 @@ public class Controller
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-1 EvaluateBooleanExpressions module:");
                     EvaluateBooleanExpressions.Run();
 
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-2 ControlVariableScope module:");
+                    ControlVariableScope.Run();
+
                     break;
 
                 case "1-1":
@@ -139,6 +142,12 @@ public class Controller
                 case "3-1":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-1 EvaluateBooleanExpressions module:");
                     EvaluateBooleanExpressions.Run();
+
+                    break;
+
+                case "3-2":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-2 ControlVariableScope module:");
+                    ControlVariableScope.Run();
 
                     break;
 

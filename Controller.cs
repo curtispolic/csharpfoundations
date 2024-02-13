@@ -68,6 +68,9 @@ public class Controller
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-3 SwitchCaseConstructs module:");
                     SwitchCaseConstructs.Run();
 
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-4 IterateUsingForStatements module:");
+                    IterateUsingForStatements.Run();
+
                     break;
 
                 case "1-1":
@@ -157,6 +160,12 @@ public class Controller
                 case "3-3":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-3 SwitchCaseConstructs module:");
                     SwitchCaseConstructs.Run();
+
+                    break;
+
+                case "3-4":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-4 IterateUsingForStatements module:");
+                    IterateUsingForStatements.Run();
 
                     break;
 

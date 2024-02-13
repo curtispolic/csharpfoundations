@@ -74,6 +74,9 @@ public class Controller
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-5 LoopingLogicUsingDoWhile module:");
                     LoopingLogicUsingDoWhile.Run();
 
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-6 ConditionalBranchingAndLoopingStructures module:");
+                    ConditionalBranchingAndLoopingStructures.Run();
+
                     break;
 
                 case "1-1":
@@ -175,6 +178,12 @@ public class Controller
                 case "3-5":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-5 LoopingLogicUsingDoWhile module:");
                     LoopingLogicUsingDoWhile.Run();
+
+                    break;
+
+                case "3-6":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-6 ConditionalBranchingAndLoopingStructures module:");
+                    ConditionalBranchingAndLoopingStructures.Run();
 
                     break;
 

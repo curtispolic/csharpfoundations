@@ -99,7 +99,7 @@ public class ConditionalBranchingAndLoopingStructures
 
                 case "2":
                     // Add a new pet
-                    string newSpecies = ""; string newID = ""; string newAge = "";
+                    string newSpecies = ""; string newAge = "";
                     string newNick = ""; string newPhys = ""; string newPers = "";
 
                     // Get species
@@ -123,7 +123,7 @@ public class ConditionalBranchingAndLoopingStructures
                     } while (newSpecies == "");
 
                     // Generate ID
-                    newID = newSpecies.Substring(0,1) + (animalList.Count + 1).ToString();
+                    string newID = newSpecies.Substring(0,1) + (animalList.Count + 1).ToString();
 
                     bool validAge = false;
                     int newAgeNum;
@@ -217,14 +217,126 @@ public class ConditionalBranchingAndLoopingStructures
                     break;
 
                 case "3":
-                    Console.WriteLine("this app feature is coming soon - please check back to see progress.");
-                    Console.WriteLine("Press the Enter key to continue.");
+                    // Ensure ages and personality descriptions are complete
+                    foreach (Animal animal in animalList)
+                    {
+                        bool correctAge = false;
+                        bool correctPhys = false;
+
+                        // Ensure the age is correct and if not, get a correct one
+                        // The _ just discards the actual int
+                        correctAge = int.TryParse(animal.Age, out _);
+                        
+                        while (!correctAge)
+                        {
+                            Console.WriteLine($"Please enter the age for Animal ID: {animal.ID}");
+                            readResult = Console.ReadLine();
+                            if (readResult != null)
+                            {
+                                if (readResult != "?")
+                                {
+                                    correctAge = int.TryParse(readResult, out _);
+                                    if (correctAge)
+                                    {
+                                        animal.Age = readResult;
+                                        Console.WriteLine($"Setting age to: {animal.Age}");
+                                        Console.WriteLine();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Please enter a valid age");
+                                    }
+                                }
+                                else
+                                {
+                                    correctAge = true;
+                                    animal.Age = "?";
+                                    Console.WriteLine($"Setting age to: {animal.Age}");
+                                    Console.WriteLine();
+                                }
+                            }
+                        }
+
+                        // Ensure physical description is correct and if not, get one
+                        if (animal.PhysicalDescription != null)
+                        {
+                            if (animal.PhysicalDescription != "")
+                            {
+                                correctPhys = true;
+                            }
+                        }
+
+                        while (!correctPhys)
+                        {
+                            Console.WriteLine($"Please enter the physical description for Animal ID: {animal.ID}");
+                            readResult = Console.ReadLine();
+                            if (readResult != null && readResult.Trim() != "")
+                            {
+                                animal.PhysicalDescription = readResult.Trim().ToLower();
+                                correctPhys = true;
+                                Console.WriteLine($"Setting physical description to: {animal.PhysicalDescription}");
+                                Console.WriteLine();
+                            }
+                        }
+                    }
+                    Console.WriteLine("Age and physical description fields are complete for all of our friends");
+                    Console.WriteLine("Press enter to continue back to the main menu");
                     Console.ReadLine();
                     break;
 
                 case "4":
-                    Console.WriteLine("this app feature is coming soon - please check back to see progress.");
-                    Console.WriteLine("Press the Enter key to continue.");
+                    // Ensure nicknam and personality fields are correct and complete
+                    foreach (Animal animal in animalList)
+                    {
+                        bool correctNick = false;
+                        bool correctPers = false;
+
+                        // Ensure nickname is correct and if not, get one
+                        if (animal.Nickname != null)
+                        {
+                            if (animal.Nickname != "")
+                            {
+                                correctNick = true;
+                            }
+                        }
+
+                        while (!correctNick)
+                        {
+                            Console.WriteLine($"Please enter the nickname for Animal ID: {animal.ID}");
+                            readResult = Console.ReadLine();
+                            if (readResult != null && readResult.Trim() != "")
+                            {
+                                animal.Nickname = readResult.Trim().ToLower();
+                                correctNick = true;
+                                Console.WriteLine($"Setting nickname to: {animal.Nickname}");
+                                Console.WriteLine();
+                            }
+                        }
+
+                        // Ensure personality description is correct and if not, get one
+                        if (animal.PersonalityDescription != null)
+                        {
+                            if (animal.PersonalityDescription != "")
+                            {
+                                correctPers = true;
+                            }
+                        }
+
+                        while (!correctPers)
+                        {
+                            Console.WriteLine($"Please enter the personality description for Animal ID: {animal.ID}");
+                            readResult = Console.ReadLine();
+                            if (readResult != null && readResult.Trim() != "")
+                            {
+                                animal.PersonalityDescription = readResult.Trim().ToLower();
+                                correctPers = true;
+                                Console.WriteLine($"Setting personality description to: {animal.PersonalityDescription}");
+                                Console.WriteLine();
+                            }
+                        }
+                    }
+                    Console.WriteLine("Nickname and personality description fields are complete for all of our friends");
+                    Console.WriteLine("Press enter to continue back to the main menu");
                     Console.ReadLine();
                     break;
 

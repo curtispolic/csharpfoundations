@@ -24,8 +24,8 @@ public class Animal
 
     public void Print()
     {
-        Console.WriteLine($"Species: {Species}");
         Console.WriteLine($"ID: {ID}");
+        Console.WriteLine($"Species: {Species}");
         Console.WriteLine($"Age: {Age}");
         Console.WriteLine($"Nickname: {Nickname}");
         Console.WriteLine($"Physical Description: {PhysicalDescription}");
@@ -40,7 +40,20 @@ public class ConditionalBranchingAndLoopingStructures
     {
         string menuSelection = "";
         string? readResult;
-        List<Animal> animalList = new();
+        List<Animal> animalList = new()
+        {
+            // Pre-seeded data
+            new Animal("dog", "d1", "2", "lola",
+            "medium sized cream colored female golden retriever weighing about 65 pounds. housebroken.",
+            "loves to have her belly rubbed and likes to chase her tail. gives lots of kisses."),
+            new Animal("dog", "d2", "9", "loki",
+            "large reddish-brown male golden retriever weighing about 85 pounds. housebroken.",
+            "loves to have his ears rubbed when he greets you at the door, or at any time! loves to lean-in and give doggy hugs."),
+            new Animal("cat", "c3", "1", "puss",
+            "small white female weighing about 8 pounds. litter box trained.",
+            "friendly"),
+            new Animal("cat", "c4", "?", "", "", "")
+        };
 
         // Menu
         do
@@ -69,7 +82,7 @@ public class ConditionalBranchingAndLoopingStructures
                 continue;
             }
 
-            switch(menuSelection)
+            switch(menuSelection.ToLower())
             {
                 case "1":
                     // List all current pets
@@ -92,57 +105,58 @@ public class ConditionalBranchingAndLoopingStructures
                     // Get species
                     do
                     {
-                        Console.WriteLine("Please enter the new animal's species");
+                        Console.WriteLine("Please enter the new animal's species (dog or cat)");
                         readResult = Console.ReadLine();
                         if (readResult != null)
                         {
-                            newSpecies = readResult.Trim().ToLower();
-                            Console.WriteLine($"The new animal's species will be: {newSpecies}");
-                            Console.WriteLine();
-                        }
-                    } while (newSpecies == "");
-
-                    // Get ID
-                    do
-                    {
-                        Console.WriteLine("Please enter the new animal's ID");
-                        readResult = Console.ReadLine();
-                        if (readResult != null)
-                        {
-                            newID = readResult.Trim().ToLower();
-                            foreach (Animal animal in animalList)
+                            if (readResult.ToLower() == "dog" || readResult.ToLower() == "cat")
                             {
-                                if (animal.ID == readResult.Trim().ToLower())
-                                {
-                                    newID = "";
-                                }
-                            }
-
-                            if (newID != "")
-                            {
-                                Console.WriteLine($"The new animal's ID will be: {newID}");
+                                newSpecies = readResult.ToLower();
+                                Console.WriteLine($"The new animal's species will be: {newSpecies}");
                                 Console.WriteLine();
                             }
                             else
                             {
-                                Console.WriteLine("ID must be unique");
+                                Console.WriteLine("Species must be \"dog\" or \"cat\"");
                             }
-
                         }
-                    } while (newID == "");
+                    } while (newSpecies == "");
 
+                    // Generate ID
+                    newID = newSpecies.Substring(0,1) + (animalList.Count + 1).ToString();
+
+                    bool validAge = false;
+                    int newAgeNum;
                     // Get age
                     do
                     {
-                        Console.WriteLine("Please enter the new animal's age");
+                        Console.WriteLine("Please enter the new animal's age, or \"?\" if unknown");
                         readResult = Console.ReadLine();
                         if (readResult != null)
                         {
-                            newAge = readResult.Trim().ToLower();
-                            Console.WriteLine($"The new animal's age will be: {newAge}");
-                            Console.WriteLine();
+                            if (readResult != "?")
+                            {
+                                validAge = int.TryParse(readResult, out newAgeNum);
+                                if (validAge)
+                                {
+                                    newAge = newAgeNum.ToString();
+                                    Console.WriteLine($"The new animal's age will be: {newAgeNum}");
+                                    Console.WriteLine();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Please enter a valid age");
+                                }
+                            }
+                            else
+                            {
+                                validAge = true;
+                                newAge = "?";
+                                Console.WriteLine($"The new animal's age will be: {newAge}");
+                                Console.WriteLine();
+                            }
                         }
-                    } while (newAge == "");
+                    } while (!validAge);
 
                     // Get nickname
                     do
@@ -152,6 +166,10 @@ public class ConditionalBranchingAndLoopingStructures
                         if (readResult != null)
                         {
                             newNick = readResult.Trim().ToLower();
+                            if (newNick == "")
+                            {
+                                newNick = "tbd";
+                            }
                             Console.WriteLine($"The new animal's nickname will be: {newNick}");
                             Console.WriteLine();
                         }
@@ -165,6 +183,10 @@ public class ConditionalBranchingAndLoopingStructures
                         if (readResult != null)
                         {
                             newPhys = readResult.Trim().ToLower();
+                            if (newPhys == "")
+                            {
+                                newPhys = "tbd";
+                            }
                             Console.WriteLine($"The new animal's physical description will be: {newPhys}");
                             Console.WriteLine();
                         }
@@ -178,7 +200,11 @@ public class ConditionalBranchingAndLoopingStructures
                         if (readResult != null)
                         {
                             newPers = readResult.Trim().ToLower();
-                            Console.WriteLine($"The new animal's species will be {newPers}");
+                            if (newPers == "")
+                            {
+                                newPers = "tbd";
+                            }
+                            Console.WriteLine($"The new animal's species will be: {newPers}");
                             Console.WriteLine();
                         }
                     } while (newPers == "");

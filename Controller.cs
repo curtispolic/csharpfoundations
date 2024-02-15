@@ -79,6 +79,13 @@ public class Controller
 
                     break;
 
+                case "4":
+                    // Displays the entire fourth set
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-2 CastingAndConversion module:");
+                    CastingAndConversions.Run();
+
+                    break;
+
                 case "1-1":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 1-1 WriteYourFirstCode module:");
                     WriteYourFirstCode.Run();
@@ -184,6 +191,12 @@ public class Controller
                 case "3-6":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 3-6 ConditionalBranchingAndLoopingStructures module:");
                     ConditionalBranchingAndLoopingStructures.Run();
+
+                    break;
+
+                case "4-2":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-2 CastingAndConversion module:");
+                    CastingAndConversions.Run();
 
                     break;
 

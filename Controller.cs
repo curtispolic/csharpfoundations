@@ -84,6 +84,12 @@ public class Controller
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-2 CastingAndConversion module:");
                     CastingAndConversions.Run();
 
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-3 ArrayHelperMethods module:");
+                    ArrayHelperMethods.Run();
+
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-4 FormattingAlphaNumericData module:");
+                    FormattingAlphanumericData.Run();
+
                     break;
 
                 case "1-1":
@@ -197,6 +203,18 @@ public class Controller
                 case "4-2":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-2 CastingAndConversion module:");
                     CastingAndConversions.Run();
+
+                    break;
+
+                case "4-3":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-3 ArrayHelperMethods module:");
+                    ArrayHelperMethods.Run();
+
+                    break;
+
+                case "4-4":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-4 FormattingAlphaNumericData module:");
+                    FormattingAlphanumericData.Run();
 
                     break;
 

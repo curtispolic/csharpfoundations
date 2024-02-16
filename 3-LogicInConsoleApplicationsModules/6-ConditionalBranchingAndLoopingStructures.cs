@@ -342,8 +342,38 @@ public class ConditionalBranchingAndLoopingStructures
 
                 case "5":
                     // TODO: Edit an animal's age
-                    Console.WriteLine("this app feature is coming soon - please check back to see progress.");
-                    Console.WriteLine("Press the Enter key to continue.");
+                    bool validSearch = false; Animal editAnimal;
+                    do
+                    {
+                        Console.WriteLine("Please enter the ID of the animal whose name you wish to edit:");
+                        readResult = Console.ReadLine();
+                        if (readResult.ToLower() == "exit") break;
+                        foreach (Animal animal in animalList)
+                        {
+                            if (animal.ID == readResult.ToLower())
+                            {
+                                validSearch = true;
+                                editAnimal = animal;
+                            }
+                        }
+                    } while (!validSearch)
+
+                    do
+                    {
+                        validAge = false
+                        Console.WriteLine($"Enter the new age for animal {editAnimal.ID}");
+                        readResult = Console.ReadLine();
+                        int temp;
+                        if (int.TryParse(readResult, out temp))
+                        {
+                            editAnimal.Age = temp;
+                            validAge = true;
+                        }
+                    } while (!validAge)
+
+                    Console.WriteLine($"Animal {editAnimal.ID}'s age has been changed to {editAnimal.Age}")
+                    
+                    Console.WriteLine("Press enter to continue back to the main menu");
                     Console.ReadLine();
                     break;
 

@@ -22,6 +22,16 @@ public class Animal
         PersonalityDescription = newPers;
     }
 
+    public Animal()
+    {
+        Species = "";
+        ID = "";
+        Age = "";
+        Nickname = "";
+        PhysicalDescription = "";
+        PersonalityDescription = "";
+    }
+
     public void Print()
     {
         Console.WriteLine($"ID: {ID}");
@@ -40,6 +50,8 @@ public class ConditionalBranchingAndLoopingStructures
     {
         string menuSelection = "";
         string? readResult;
+        bool validSearch;
+        Animal editAnimal = new();
         List<Animal> animalList = new()
         {
             // Pre-seeded data
@@ -341,37 +353,41 @@ public class ConditionalBranchingAndLoopingStructures
                     break;
 
                 case "5":
-                    // TODO: Edit an animal's age
-                    bool validSearch = false; Animal editAnimal;
+                    // Edit an animal's age
+                    validSearch = false;
+                    // editAnimal must be a blank instance to allow use of a local variable later
                     do
                     {
                         Console.WriteLine("Please enter the ID of the animal whose name you wish to edit:");
                         readResult = Console.ReadLine();
-                        if (readResult.ToLower() == "exit") break;
-                        foreach (Animal animal in animalList)
+                        if (readResult != null)
                         {
-                            if (animal.ID == readResult.ToLower())
+                            if (readResult.ToLower() == "exit") break;
+                            foreach (Animal animal in animalList)
                             {
-                                validSearch = true;
-                                editAnimal = animal;
+                                if (animal.ID == readResult.ToLower())
+                                {
+                                    validSearch = true;
+                                    editAnimal = animal;
+                                }
                             }
                         }
-                    } while (!validSearch)
+                    } while (!validSearch);
 
                     do
                     {
-                        validAge = false
+                        validAge = false;
                         Console.WriteLine($"Enter the new age for animal {editAnimal.ID}");
                         readResult = Console.ReadLine();
                         int temp;
                         if (int.TryParse(readResult, out temp))
                         {
-                            editAnimal.Age = temp;
+                            editAnimal.Age = temp.ToString();
                             validAge = true;
                         }
-                    } while (!validAge)
+                    } while (!validAge);
 
-                    Console.WriteLine($"Animal {editAnimal.ID}'s age has been changed to {editAnimal.Age}")
+                    Console.WriteLine($"Animal {editAnimal.ID}'s age has been changed to {editAnimal.Age}");
                     
                     Console.WriteLine("Press enter to continue back to the main menu");
                     Console.ReadLine();
@@ -385,8 +401,49 @@ public class ConditionalBranchingAndLoopingStructures
                     break;
 
                 case "7":
-                    Console.WriteLine("this app feature is coming soon - please check back to see progress.");
-                    Console.WriteLine("Press the Enter key to continue.");
+                    // Display all cats with a selected characteristic
+                    validSearch = false;
+
+                    do
+                    {
+                        Console.WriteLine("Please enter the characteristic you desire in your cat:");
+                        readResult = Console.ReadLine();
+                        if (readResult != null)
+                        {
+                            validSearch = true;
+                        }
+                    } while (!validSearch);
+
+                    List<Animal> searchReturn = new();
+                    foreach (Animal animal in animalList)
+                    {
+                        if (animal.Species == "cat")
+                        {
+                            #pragma warning disable CS8604 // Possible null reference argument.
+                            if (animal.PhysicalDescription.Contains(readResult) || animal.PersonalityDescription.Contains(readResult))
+                            {
+                                searchReturn.Add(animal);
+                            }
+                            #pragma warning restore CS8604 // Possible null reference argument.
+                        }
+                    }
+
+                    if (searchReturn.Count == 0)
+                    {
+                        Console.WriteLine("We couldn't find any matches :(");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"We found {searchReturn.Count} matches:");
+                        Console.WriteLine();
+                        foreach (Animal animal in searchReturn)
+                        {
+                            animal.Print();
+                            Console.WriteLine();
+                        }
+                    }
+
+                    Console.WriteLine("Press enter to continue back to the main menu");
                     Console.ReadLine();
                     break;
 

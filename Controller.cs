@@ -90,6 +90,9 @@ public class Controller
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-4 FormattingAlphaNumericData module:");
                     FormattingAlphanumericData.Run();
 
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-5 StringDataTypeMethods module:");
+                    StringDataTypeMethods.Run();
+
                     break;
 
                 case "1-1":
@@ -215,6 +218,12 @@ public class Controller
                 case "4-4":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-4 FormattingAlphaNumericData module:");
                     FormattingAlphanumericData.Run();
+
+                    break;
+
+                case "4-5":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-5 StringDataTypeMethods module:");
+                    StringDataTypeMethods.Run();
 
                     break;
 

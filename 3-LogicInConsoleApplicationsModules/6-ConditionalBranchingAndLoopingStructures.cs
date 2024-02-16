@@ -52,6 +52,7 @@ public class ConditionalBranchingAndLoopingStructures
         string? readResult;
         bool validSearch;
         Animal editAnimal = new();
+        string[] searchTerms;
         List<Animal> animalList = new()
         {
             // Pre-seeded data
@@ -297,7 +298,7 @@ public class ConditionalBranchingAndLoopingStructures
                     break;
 
                 case "4":
-                    // Ensure nicknam and personality fields are correct and complete
+                    // Ensure nickname and personality fields are correct and complete
                     foreach (Animal animal in animalList)
                     {
                         bool correctNick = false;
@@ -415,6 +416,7 @@ public class ConditionalBranchingAndLoopingStructures
                     } while (!validSearch);
 
                     List<Animal> searchReturn = new();
+
                     foreach (Animal animal in animalList)
                     {
                         if (animal.Species == "cat")
@@ -448,8 +450,55 @@ public class ConditionalBranchingAndLoopingStructures
                     break;
 
                 case "8":
-                    Console.WriteLine("this app feature is coming soon - please check back to see progress.");
-                    Console.WriteLine("Press the Enter key to continue.");
+                    // Display all dogs with selected characteristics
+                    validSearch = false;
+
+                    do
+                    {
+                        Console.WriteLine("Please enter the characteristics you desire in your dog (comma separated):");
+                        readResult = Console.ReadLine();
+                        if (readResult != null)
+                        {
+                            validSearch = true;
+                        }
+                    } while (!validSearch);
+
+
+                    #pragma warning disable CS8602 // Dereference of a possibly null reference.
+                    searchTerms = readResult.Split(',');
+                    #pragma warning restore CS8602 // Dereference of a possibly null reference.
+
+                    searchReturn = new();
+                    foreach (Animal animal in animalList)
+                    {
+                        if (animal.Species == "dog")
+                        {
+                            bool matchesTerms = false;
+                            foreach (string str in searchTerms)
+                            {
+                                if (animal.PhysicalDescription.Contains(str.Trim()) || animal.PersonalityDescription.Contains(str.Trim()))
+                                {
+                                    if (!searchReturn.Contains(animal))
+                                        searchReturn.Add(animal);
+                                    matchesTerms = true;
+                                    Console.WriteLine($"Our dog {animal.Nickname} is a match for \"{str}\"");
+                                }
+                            }
+                            if (matchesTerms)
+                            {
+                                Console.WriteLine();
+                                animal.Print();
+                                Console.WriteLine();
+                            }
+                        }
+                    }
+
+                    if (searchReturn.Count == 0)
+                    {
+                        Console.WriteLine("We couldn't find any matches :(");
+                    }
+
+                    Console.WriteLine("Press enter to continue back to the main menu");
                     Console.ReadLine();
                     break;
 

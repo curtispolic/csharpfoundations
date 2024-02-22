@@ -95,6 +95,13 @@ public class Controller
 
                     break;
 
+                case "5":
+                    // Display the entire fifth set
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-1 FirstMethod module:");
+                    FirstMethod.Run();
+
+                    break;
+
                 case "1-1":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 1-1 WriteYourFirstCode module:");
                     WriteYourFirstCode.Run();
@@ -224,6 +231,12 @@ public class Controller
                 case "4-5":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 4-5 StringDataTypeMethods module:");
                     StringDataTypeMethods.Run();
+
+                    break;
+
+                case "5-1":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-1 FirstMethod module:");
+                    FirstMethod.Run();
 
                     break;
 

@@ -106,6 +106,9 @@ public class Controller
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-3 MethodsWithReturns module:");
                     MethodsWithReturns.Run();
 
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-4 PettingZooProject module:");
+                    PettingZooProject.Run();
+
                     break;
 
                 case "1-1":
@@ -255,6 +258,12 @@ public class Controller
                 case "5-3":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-3 MethodsWithReturns module:");
                     MethodsWithReturns.Run();
+
+                    break;
+
+                case "5-4":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-4 PettingZooProject module:");
+                    PettingZooProject.Run();
 
                     break;
 

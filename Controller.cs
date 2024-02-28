@@ -100,6 +100,9 @@ public class Controller
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-1 FirstMethod module:");
                     FirstMethod.Run();
 
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-2 MethodsWithParameters module:");
+                    MethodsWithParameters.Run();
+
                     break;
 
                 case "1-1":
@@ -237,6 +240,12 @@ public class Controller
                 case "5-1":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-1 FirstMethod module:");
                     FirstMethod.Run();
+
+                    break;
+
+                case "5-2":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-2 MethodsWithParameters module:");
+                    MethodsWithParameters.Run();
 
                     break;
 

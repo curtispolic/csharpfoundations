@@ -111,6 +111,13 @@ public class Controller
 
                     break;
 
+                case "6":
+                    // Display 6
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 6-3 ExceptionHandling module:");
+                    ExceptionHandling.Run();
+
+                    break;
+
                 case "1-1":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 1-1 WriteYourFirstCode module:");
                     WriteYourFirstCode.Run();
@@ -264,6 +271,12 @@ public class Controller
                 case "5-4":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 5-4 PettingZooProject module:");
                     PettingZooProject.Run();
+
+                    break;
+
+                case "6-3":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 6-3 ExceptionHandling module:");
+                    ExceptionHandling.Run();
 
                     break;
 

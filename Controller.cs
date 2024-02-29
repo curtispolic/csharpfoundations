@@ -116,6 +116,9 @@ public class Controller
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 6-3 ExceptionHandling module:");
                     ExceptionHandling.Run();
 
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 6-4 CreateAndThrowExceptions module:");
+                    CreateAndThrowException.Run();
+
                     break;
 
                 case "1-1":
@@ -277,6 +280,12 @@ public class Controller
                 case "6-3":
                     Console.WriteLine("\n--------------------\n\nBelow is the output for the 6-3 ExceptionHandling module:");
                     ExceptionHandling.Run();
+
+                    break;
+
+                case "6-4":
+                    Console.WriteLine("\n--------------------\n\nBelow is the output for the 6-4 CreateAndThrowExceptions module:");
+                    CreateAndThrowException.Run();
 
                     break;
 
